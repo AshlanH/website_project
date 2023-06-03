@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Test Page</title></head>
+    <body>
+        <img src = {{ push_album.image }} width="300" height="300"> 
+        
+        <br>
+        Album name: {{ push_album.title }}
+        <br>
+        Album Description: {{ push_album.description }}
+        <br>
+        Album Tracks:
+        {% for each_track in push_album.track %}
+            each_track
+        {% endfor %}
+        <br>
+        
+    </body>
+</html>

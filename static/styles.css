@@ -1,0 +1,102 @@
+body {
+  background-color: #f5f2f2;
+  font-family: 'lato', sans-serif;
+}
+
+#page_header {
+  color: #0d1314;
+  font-family: 'Smokum', cursive;
+  font-size: 45px
+}
+
+#nav_header {
+  font-family: 'Teko', sans-serif;
+  font-size: 25px;
+}
+
+#menu_header {
+  font-family: 'Teko', sans-serif;
+  font-size: 30px;
+  color:rgb(65, 61, 61)
+}
+
+#menu_items {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+}
+
+.textfield{
+  width: 250px;
+  height: 30px;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid rgb(179, 174, 174);
+  background-color: #f8f8f8;
+}
+
+.menu_button {
+  border: 1px solid rgb(179, 174, 174);
+  line-height: 2.5;
+  padding: 2px 20px;
+  font-size: 18px;
+  font-family: 'Teko', sans-serif;
+  text-align: center;
+  color: #000000;
+  border-radius: 1px;
+  background-color: #fffafa;
+}
+
+.menu_button:hover{
+  background-color: black;
+  color: #f7f7f7;
+  cursor: pointer;
+}
+
+.nav_button {
+  border: 2px solid rgb(179, 174, 174);
+  line-height: 2.5;
+  padding: 2px 200px;
+  font-size: 23px;
+  font-family: 'Teko', sans-serif;
+  text-align: center;
+  color: #000000;
+  border-radius: 1px;
+  background-color: #fffafa;
+}
+
+.nav_button:hover {
+  background-color: black;
+  color: #f7f7f7;
+  cursor: pointer;
+}
+
+.nav_button:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+table.menu{
+  /* border-spacing: 0 20px; */
+  /* display: block; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* border: 3px solid rgb(179, 174, 174); */
+  overflow-y: auto;
+  /* padding-left: 1%; */
+}
+
+table.menu tr,
+table.menu td{
+  font-size: 20px;
+  /* position: sticky; */
+  /* display: block; */
+}
+
+select {
+  width: 150px;
+  /* padding: 5px 35px 5px 5px; */
+  font-size: 12px;
+  border: 1px solid #CCC;
+  height: 35px;
+  background-color: rgb(225, 227, 227);
+}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block menu_panel %}
+    <table width = 100% style = 'padding-left:1.5%'>
+        <tr>
+            <th width = 25% align="left" id = 'menu_header'>Name</th>
+            <th width = 20% align="left" id = 'menu_header'>Artist</th>
+            <th width = 35% align="left" id = 'menu_header'>Genre</th>
+            <th width = 10% align="left" id = 'menu_header'></th>
+            <th width = 10% align="left" id = 'menu_header'></th>
+        </tr>
+        <tr><td colspan="5"> 
+            <table width = 100%  class = 'menu'>
+                {% for each in menu %}
+                    <tr padding="10px" id = 'menu_items'>
+                        <!-- ITEM NAME -->
+                        <td width = 25% valign="middle" style="font-size:25px">{{ each['name'] }}</td> 
+                        <!-- ITEM ARTIST NAME -->
+                        <td width = 20% valign="middle" style="font-size:22px">{{ each['artist'] }}</td>
+                        <!-- ITEM GENRE -->
+                        <td width = 35% valign="middle" style="font-size: 18px"/>{% for g in each['genre'] %} | {{g}} {% endfor %}</td>
+                        <!-- ITEM OPTIONS -->
+                        <td width = 10%>
+                            <form method = 'POST'> 
+                                <input type = 'hidden' class = 'menu_button' name = 'submission_identifier' value = {{ each['vinyl_id'] }}>
+                                <input type = 'submit' class = 'menu_button' value = 'View'>
+                            </form>
+                        </td>
+                        <td width = 10%>
+                            <form method = 'POST'> 
+                                <input type = 'hidden' class = 'menu_button' name = 'submission_identifier' value = {{ each['vinyl_id'] }}>
+                                <input type = 'submit' class = 'menu_button' value = 'Add to Cart'>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </td></tr>
+        <tr><td>
+            
+        </td></tr>
+    </table>
+{% endblock %}
+
+{% block information_panel %}
+    <table class="menu" style = "padding-top: 15px; font-family: 'Barlow Condensed', sans-serif;">
+        <tr><td>
+            <center>
+            <img src="static/images/oxbow_thin_black_duke.jpeg" alt="Oxbow Thin Black Duke", width='400', height='400'>
+            </center>
+        </td></tr>
+        <tr><td>
+            {{ menu[0]['description'] }}
+        </td></tr>
+        <tr><td>
+            <ul>
+                <li>Track 1</li>
+                <li>Track 2</li>
+                <li>Track 3</li>
+                <li>Track 4</li>
+                <li>Track 5</li>
+                <li>Track 6</li>
+            </ul>
+        </td></tr>
+    </table>
+
+    
+{% endblock %}

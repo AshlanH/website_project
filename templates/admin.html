@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block menu_panel %}
+<table style="width: 97.3%; margin-left:2.5%; padding-left:15px; font-family: 'Barlow Condensed', sans-serif; font-size: 18px;">
+<!-- Textfield inputs - Album information -->
+<tr><td width="10%"><p style="font-size:20px;"> Album Name: </p> </td> <td><input type="text" class="textfield"> </td></tr>
+<tr><td width="10%"><p style="font-size:20px;"> Artist: </p> </td> <td><input type="text" class="textfield"> </td></tr>
+<tr><td width="10%"><p style="font-size:20px;"> Year Released: </p> </td> <td><input type="text" class="textfield"> </td></tr>
+<tr><td width="10%"><p style="font-size:20px;"> Description: </p> </td> <td><input type="text" class="textfield"> </td></tr>
+<tr><td width="10%"><p style="font-size:20px;"> Price: </p> </td> <td><input type="text" class="textfield"> </td></tr>
+<tr><td colspan="2">
+    <!-- Implement loop feature by pulling all genres from SQL TAGS table -->
+    <form method="post" name="submission_identifier"> 
+            <p style="font-size:20px;">Genres:</p>
+            {% for each in genre %}
+                <input type = "checkbox" name="checkbox_identifier" id="radio_btn1" value= {{ each }}></input> 
+                <label for="radio_btn1"> {{ each }} </label>
+            {% endfor %}
+            <!-- <input type = "checkbox" name="checkbox_identifier" id="radio_btn1" value="Genre1"></input> 
+            <label for="radio_btn1">Genre 1</label>
+            <input type = "checkbox" name="checkbox_identifier" id="radio_btn2" value="Genre2"></input> 
+            <label for="radio_btn2">Genre 2</label>
+            <input type = "checkbox" name="checkbox_identifier" id="radio_btn3" value="Genre3"></input> 
+            <label for="radio_btn3">Genre 3</label>
+            <input type = "checkbox" name="checkbox_identifier" id="radio_btn4" value="Genre4"></input> 
+            <label for="radio_btn4">Genre 4</label> -->
+        <br><br> 
+        <p style="font-size:20px;"> Track Information:</p>
+            <input type = 'button' class='menu_button' style="background-image: url(static/images/plus_button.png); 
+            background-position: 50% 50%; border:none; background-color: transparent; background-size: 40px 40px; background-repeat: no-repeat;" 
+            onclick="addField()">
+            <!-- <input type = 'button' class="menu_button" onclick="removeField()" value="Remove One"> -->
+            
+        
+        
+        <div id="container"></div>
+        
+    </form>
+
+    <!-- FINALISE -->
+    <br>
+    <input type="submit" class = 'menu_button' value="SUBMIT">
+</td></tr></table>
+    <script>
+        function addField(){
+            var track_count = document.getElementById("container").childElementCount
+            container.appendChild(document.createTextNode("Track " + (track_count/3 + 1)));
+            // console.log(track_count)
+            // Create an <track_name input> element, set its type and name attributes
+                var trackname_input = document.createElement("input");
+                trackname_input.type = "text";
+                trackname_input.name = "trackname_identifier";
+                trackname_input.className = 'textfield';
+                container.appendChild(trackname_input);
+                // Create an <tracklength_input input> element, set its type and name attributes
+                container.appendChild(document.createTextNode("Track Duration (Seconds)"));
+                var tracklength_input = document.createElement("input");
+                tracklength_input.type = "text";
+                tracklength_input.name = "tracklength_identifier";
+                tracklength_input.className = 'textfield';
+                container.appendChild(tracklength_input);
+                // Append a line break 
+                container.appendChild(document.createElement("br"));   
+        }
+
+        function removeField(){
+            var container = document.getElementById("container");
+            for (i=0; i<5; i++){
+                container.removeChild(container.lastChild);
+            }
+        }
+        
+    </script>
+{% endblock %}
